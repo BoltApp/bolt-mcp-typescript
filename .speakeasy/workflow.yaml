@@ -1,0 +1,13 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    -OAS:
+        inputs:
+            - location: registry.speakeasyapi.dev/bolt/boltpublicapi/bolt-python-api:main
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/bolt/boltpublicapi/-oas
+targets:
+    bolt:
+        target: mcp-typescript
+        source: -OAS

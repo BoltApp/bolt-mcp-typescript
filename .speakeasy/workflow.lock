@@ -1,0 +1,28 @@
+speakeasyVersion: 1.631.5
+sources:
+    -OAS:
+        sourceNamespace: bolt-python-api
+        sourceRevisionDigest: sha256:979591ab54418fcfcf6bb36ba4aa4748231411d7d9612b3d60aec41003fde169
+        sourceBlobDigest: sha256:0af17f076ed8196f10613e2f3081b45456c15f67bc75ca7a2f569bf55d9bca8a
+        tags:
+            - latest
+targets:
+    bolt:
+        source: -OAS
+        sourceNamespace: bolt-python-api
+        sourceRevisionDigest: sha256:979591ab54418fcfcf6bb36ba4aa4748231411d7d9612b3d60aec41003fde169
+        sourceBlobDigest: sha256:0af17f076ed8196f10613e2f3081b45456c15f67bc75ca7a2f569bf55d9bca8a
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        -OAS:
+            inputs:
+                - location: registry.speakeasyapi.dev/bolt/boltpublicapi/bolt-python-api:main
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/bolt/boltpublicapi/-oas
+    targets:
+        bolt:
+            target: mcp-typescript
+            source: -OAS

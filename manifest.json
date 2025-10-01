@@ -1,0 +1,151 @@
+{
+  "dxt_version": "0.1",
+  "name": "boltcheckout",
+  "version": "0.0.1",
+  "description": "",
+  "long_description": "Bolt API Reference: Postman Collection:\n\n[![](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/9136127-55d2bde1-a248-473f-95b5-64cfd02fb445?action=collection%2Ffork&collection-url=entityId%3D9136127-55d2bde1-a248-473f-95b5-64cfd02fb445%26entityType%3Dcollection%26workspaceId%3D78beee89-4238-4c5f-bd1f-7e98978744b4#?env%5BBolt%20Sandbox%20Environment%5D=W3sia2V5IjoiYXBpX2Jhc2VfdXJsIiwidmFsdWUiOiJodHRwczovL2FwaS1zYW5kYm94LmJvbHQuY29tIiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InRrX2Jhc2UiLCJ2YWx1ZSI6Imh0dHBzOi8vc2FuZGJveC5ib2x0dGsuY29tIiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFwaV9rZXkiLCJ2YWx1ZSI6IjxyZXBsYWNlIHdpdGggeW91ciBCb2x0IFNhbmRib3ggQVBJIGtleT4iLCJ0eXBlIjoic2VjcmV0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaXNoYWJsZV9rZXkiLCJ2YWx1ZSI6IjxyZXBsYWNlIHdpdGggeW91ciBCb2x0IFNhbmRib3ggcHVibGlzaGFibGUga2V5PiIsInR5cGUiOiJkZWZhdWx0IiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJkaXZpc2lvbl9pZCIsInZhbHVlIjoiPHJlcGxhY2Ugd2l0aCB5b3VyIEJvbHQgU2FuZGJveCBwdWJsaWMgZGl2aXNpb24gSUQ+IiwidHlwZSI6ImRlZmF1bHQiLCJlbmFibGVkIjp0cnVlfV0=)\n\n## About\n A comprehensive Bolt API reference for interacting with Transactions, Orders, Product Catalog, Configuration, Testing, and much more.\n\n Note: You must also reference the [Merchant Callback API](/api-merchant) when building a managed checkout custom cart integration\n",
+  "author": {
+    "name": "Speakeasy"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "./bin/mcp-server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/bin/mcp-server.js",
+        "start",
+        "--server-index",
+        "${user_config.server_index}",
+        "--x-api-key",
+        "${user_config.x_api_key}",
+        "--o-auth",
+        "${user_config.o_auth}"
+      ]
+    }
+  },
+  "display_name": "Boltcheckout",
+  "tools": [
+    {
+      "name": "account-create-account",
+      "description": "Create Bolt Account\n\nCreate a Bolt shopping account."
+    },
+    {
+      "name": "account-detect-account",
+      "description": "Detect Account\n\nCheck whether an account exists using one of \\`email\\`, \\`phone\\`, or \\`sha256_email\\` as the unique identifier."
+    },
+    {
+      "name": "configuration-get-merchant-callbacks",
+      "description": "Get Callback URLs\n\nRetrieves callbacks URLs for a Bolt merchant division."
+    },
+    {
+      "name": "configuration-set-merchant-callbacks",
+      "description": "Set Callback URLs\n\nConfigure callbacks URLs for a Bolt merchant division. This will store or override only the callback URLs that are specified in the request. Operations are fully transactional."
+    },
+    {
+      "name": "configuration-get-merchant-identifiers",
+      "description": "Get Merchant Identifiers\n\nThis endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/tools/api-keys/) related to the merchant division."
+    },
+    {
+      "name": "orders-create-order-token",
+      "description": "Create Order Token\n\nMake a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases."
+    },
+    {
+      "name": "orders-track-order",
+      "description": "Send order tracking details\n\nSend the carrier and order tracking number to Bolt (after a label has been printed). Bolt then uses EasyPost to forward ongoing tracking event updates to the shopper. This request must include **all** items included in the shipment; their references must also match those found in the original cart generation.\n"
+    },
+    {
+      "name": "statements-get-statements",
+      "description": "Fetch a Statement\n\nGet a pre-signed URL for the requested statement file."
+    },
+    {
+      "name": "transactions-capture-transaction",
+      "description": "Capture a Transaction\n\nThis captures funds for the designated transaction. A capture can be done for any partial amount or for the total authorized amount.\n\nAlthough the response returns the standard \\`transaction_view\\` object, only \\`captures\\` and either \\`id\\` or \\`reference\\` are needed.\n"
+    },
+    {
+      "name": "transactions-refund-transaction",
+      "description": "Refund a Transaction\n\nThis refunds a captured transaction. Refunds can be done for any partial amount or for the total authorized amount. These refunds are processed synchronously and return information about the refunded transaction in the standard \\`transaction_view\\` object."
+    },
+    {
+      "name": "transactions-review-transaction",
+      "description": "Review Transaction\n\nThis endpoint is used to manually approve or reject orders for a specified transaction."
+    },
+    {
+      "name": "transactions-void-transaction",
+      "description": "Void a Transaction\n\nThis voids the authorization for a given transaction. Voids must be completed before the authorization is captured.\nIn the request, either \\`transaction_id\\` or \\`transaction_reference\\` is required.\nAlthough the response returns the standard \\`transaction_view\\` object, only \\`status\\` and either \\`id\\` or \\`reference\\` are needed.\n"
+    },
+    {
+      "name": "transactions-get-transaction-details",
+      "description": "Transaction Details\n\nThis allows you to pull the full transaction details for a given transaction.\n\n **Note**: All objects and fields marked \\`required\\` in the Transaction Details response are also **nullable**. This includes any sub-components (objects or fields) also marked \\`required\\`.\n"
+    },
+    {
+      "name": "transactions-update-transaction",
+      "description": "Update a Transaction\n\nThis allows you to update certain transaction properties post-authorization."
+    },
+    {
+      "name": "O-auth-O-auth-token",
+      "description": "OAuth Token Endpoint\n\nEndpoint for receiving access, ID, and refresh tokens from Bolt's OAuth server. \n\nTo use this endpoint, first use the Authorization Code Request flow by using the \\`authorization_code\\` Grant Type (\\`grant_type\\`). Then, in the event that you would need a second or subsequent code, use the \\`refresh_token\\` value returned from a successful request as the \\`refresh_token\\` input value in your subsequent \\`refresh_token\\` Grant Type (\\`grant_type\\`) request.\n\n **Reminder - the Content-Type of this request must be application/x-www-form-urlencoded**\n"
+    },
+    {
+      "name": "testing-test-shipping",
+      "description": "Test Shipping\n\nThis endpoint simulates tracking an order's shipment and is for testing purposes only."
+    },
+    {
+      "name": "testing-create-testing-shopper-account",
+      "description": "Create Testing Shopper Account\n\nCreate a Bolt shopper account for testing purposes. Available for sandbox use only and the created  account will be recycled after a certain time."
+    },
+    {
+      "name": "testing-get-test-credit-card-token",
+      "description": "Fetch a Test Credit Card Token\n\nThis endpoint fetches a new credit card token for Bolt's universal test credit card number \\`4111 1111 1111 1004\\`. This is for testing and is available only in sandbox."
+    },
+    {
+      "name": "webhooks-query-webhooks",
+      "description": "Query Webhooks\n\nFind webhook configurations belonging to a merchant division. Results are limited to only show webhooks authorized by the X-API-Key."
+    },
+    {
+      "name": "webhooks-create-webhook",
+      "description": "Create Bolt Webhook\n\nCreate a new webhook to receive notifications from Bolt about various events, such as transaction status. Webhooks must have unique configuration."
+    },
+    {
+      "name": "webhooks-delete-webhook",
+      "description": "Delete a Bolt Webhook\n\nDelete a Bolt webhook. Provide an authorized X-API-Key to perform this action."
+    },
+    {
+      "name": "webhooks-get-webhook",
+      "description": "Get Webhook\n\nGet Webhook information by its Webhook ID. Results only include webhooks authorized by the X-API-Key."
+    }
+  ],
+  "prompts": [],
+  "keywords": [
+      "boltcheckout",
+      "bolt",
+      "api",
+      "reference",
+      "postman",
+      "collection"
+    ],
+  "user_config": {
+      "server_index": {
+        "type": "number",
+        "title": "Server Index",
+        "description": "Available servers: [https://api.bolt.com, https://api-sandbox.bolt.com, https://api-staging.bolt.com]",
+        "required": false,
+        "default": "0",
+        "max": 2
+      },
+      "x_api_key": {
+        "type": "string",
+        "title": "xAPIKey",
+        "description": "The xAPIKey to use for the request",
+        "required": false,
+        "sensitive": true
+      },
+      "o_auth": {
+        "type": "string",
+        "title": "OAuth",
+        "description": "The OAuth to use for the request",
+        "required": false,
+        "sensitive": true
+      }
+    }
+}
