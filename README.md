@@ -19,7 +19,6 @@ Bolt API Reference: Postman Collection:
 ## About
  A comprehensive Bolt API reference for interacting with Transactions, Orders, Product Catalog, Configuration, Testing, and much more.
 
- Note: You must also reference the [Merchant Callback API](/api-merchant) when building a managed checkout custom cart integration
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
