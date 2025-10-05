@@ -15,6 +15,12 @@ export const tool$accountDetectAccount: ToolDefinition<typeof args> = {
   description: `Detect Account
 
 Check whether an account exists using one of \`email\`, \`phone\`, or \`sha256_email\` as the unique identifier.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await accountDetectAccount(

@@ -20,6 +20,12 @@ To use this endpoint, first use the Authorization Code Request flow by using the
 
  **Reminder - the Content-Type of this request must be application/x-www-form-urlencoded**
 `,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await oAuthOAuthToken(

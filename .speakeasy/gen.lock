@@ -3,14 +3,15 @@ id: a8ad3e86-b63d-469b-a494-a5420b4998c5
 management:
   docChecksum: be91d59304dbcb6c747968041d7d9b3c
   docVersion: 1.0.1
-  speakeasyVersion: 1.631.5
-  generationVersion: 2.716.16
-  releaseVersion: 0.0.1
-  configChecksum: c5db26b46a39fd3336f605310c6d49b9
+  speakeasyVersion: 1.634.2
+  generationVersion: 2.721.3
+  releaseVersion: 0.1.0
+  configChecksum: 2fefb17bf9471084bd54645e51bb74bc
+  repoURL: https://github.com/BoltApp/bolt-mcp-typescript.git
 features:
   mcp-typescript:
     additionalDependencies: 0.1.0
-    core: 0.4.2
+    core: 0.5.0
     defaultEnabledRetries: 0.1.0
     enumUnions: 0.1.0
     globalSecurity: 0.1.1
@@ -21,7 +22,7 @@ features:
     responseFormat: 0.1.0
     retries: 0.1.0
     sdkHooks: 0.2.0
-    unions: 0.1.2
+    unions: 0.2.0
 generatedFiles:
   - .dxtignore
   - .gitattributes

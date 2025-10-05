@@ -15,6 +15,12 @@ export const tool$transactionsReviewTransaction: ToolDefinition<typeof args> = {
   description: `Review Transaction
 
 This endpoint is used to manually approve or reject orders for a specified transaction.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await transactionsReviewTransaction(

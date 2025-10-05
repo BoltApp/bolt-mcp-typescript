@@ -10,6 +10,12 @@ export const tool$testingGetTestCreditCardToken: ToolDefinition = {
   description: `Fetch a Test Credit Card Token
 
 This endpoint fetches a new credit card token for Bolt's universal test credit card number \`4111 1111 1111 1004\`. This is for testing and is available only in sandbox.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   tool: async (client, ctx) => {
     const [result, apiCall] = await testingGetTestCreditCardToken(
       client,

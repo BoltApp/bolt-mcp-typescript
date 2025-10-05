@@ -18,6 +18,12 @@ This voids the authorization for a given transaction. Voids must be completed be
 In the request, either \`transaction_id\` or \`transaction_reference\` is required.
 Although the response returns the standard \`transaction_view\` object, only \`status\` and either \`id\` or \`reference\` are needed.
 `,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await transactionsVoidTransaction(
