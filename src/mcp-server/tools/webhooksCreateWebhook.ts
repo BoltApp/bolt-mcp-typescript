@@ -15,6 +15,12 @@ export const tool$webhooksCreateWebhook: ToolDefinition<typeof args> = {
   description: `Create Bolt Webhook
 
 Create a new webhook to receive notifications from Bolt about various events, such as transaction status. Webhooks must have unique configuration.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await webhooksCreateWebhook(

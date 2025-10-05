@@ -19,6 +19,7 @@ Bolt API Reference: Postman Collection:
 ## About
  A comprehensive Bolt API reference for interacting with Transactions, Orders, Product Catalog, Configuration, Testing, and much more.
 
+ Note: You must also reference the [Merchant Callback API](/api-merchant) when building a managed checkout custom cart integration
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
@@ -35,6 +36,8 @@ Bolt API Reference: Postman Collection:
 <!-- Start Installation [installation] -->
 ## Installation
 
+> [!TIP]
+> To finish publishing your MCP Server to npm and others you must [run your first generation action](https://www.speakeasy.com/docs/github-setup#step-by-step-guide).
 <details>
 <summary>DXT (Desktop Extension)</summary>
 

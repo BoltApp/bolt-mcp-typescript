@@ -19,6 +19,12 @@ This captures funds for the designated transaction. A capture can be done for an
 
 Although the response returns the standard \`transaction_view\` object, only \`captures\` and either \`id\` or \`reference\` are needed.
 `,
+    annotations: {
+      "destructiveHint": false,
+      "idempotentHint": false,
+      "openWorldHint": false,
+      "readOnlyHint": false,
+    },
     args,
     tool: async (client, args, ctx) => {
       const [result, apiCall] = await transactionsCaptureTransaction(

@@ -16,6 +16,12 @@ export const tool$ordersTrackOrder: ToolDefinition<typeof args> = {
 
 Send the carrier and order tracking number to Bolt (after a label has been printed). Bolt then uses EasyPost to forward ongoing tracking event updates to the shopper. This request must include **all** items included in the shipment; their references must also match those found in the original cart generation.
 `,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ordersTrackOrder(

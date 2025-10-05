@@ -20,6 +20,12 @@ This allows you to pull the full transaction details for a given transaction.
 
  **Note**: All objects and fields marked \`required\` in the Transaction Details response are also **nullable**. This includes any sub-components (objects or fields) also marked \`required\`.
 `,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await transactionsGetTransactionDetails(

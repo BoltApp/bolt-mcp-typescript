@@ -15,6 +15,12 @@ export const tool$ordersCreateOrderToken: ToolDefinition<typeof args> = {
   description: `Create Order Token
 
 Make a request to this endpoint to create a Bolt order, generate a Bolt order token, and initiate the checkout process. A Bolt order token is required for Bolt orders; see Non-Bolt orders for alternative use cases.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await ordersCreateOrderToken(

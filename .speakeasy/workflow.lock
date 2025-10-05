@@ -1,4 +1,4 @@
-speakeasyVersion: 1.631.5
+speakeasyVersion: 1.634.2
 sources:
     -OAS:
         sourceNamespace: bolt-python-api
@@ -6,6 +6,7 @@ sources:
         sourceBlobDigest: sha256:0af17f076ed8196f10613e2f3081b45456c15f67bc75ca7a2f569bf55d9bca8a
         tags:
             - latest
+            - speakeasy-sdk-regen-1759411092
 targets:
     bolt:
         source: -OAS

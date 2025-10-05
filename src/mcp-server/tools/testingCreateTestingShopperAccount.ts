@@ -17,6 +17,12 @@ export const tool$testingCreateTestingShopperAccount: ToolDefinition<
   description: `Create Testing Shopper Account
 
 Create a Bolt shopper account for testing purposes. Available for sandbox use only and the created  account will be recycled after a certain time.`,
+  annotations: {
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await testingCreateTestingShopperAccount(

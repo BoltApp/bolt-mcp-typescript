@@ -24,7 +24,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 mcp-typescript:
-  version: 0.0.1
+  version: 0.1.0
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
@@ -35,5 +35,6 @@ mcp-typescript:
   defaultErrorName: BoltDefaultError
   envVarPrefix: BOLT
   inputModelSuffix: input
+  maxMethodParams: 0
   outputModelSuffix: output
   packageName: boltcheckout
