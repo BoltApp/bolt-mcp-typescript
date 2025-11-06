@@ -15,6 +15,13 @@ export const tool$transactionsUpdateTransaction: ToolDefinition<typeof args> = {
   description: `Update a Transaction
 
 This allows you to update certain transaction properties post-authorization.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await transactionsUpdateTransaction(

@@ -15,6 +15,13 @@ export const tool$webhooksDeleteWebhook: ToolDefinition<typeof args> = {
   description: `Delete a Bolt Webhook
 
 Delete a Bolt webhook. Provide an authorized X-API-Key to perform this action.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": true,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await webhooksDeleteWebhook(

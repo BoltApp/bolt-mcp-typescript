@@ -15,6 +15,13 @@ export const tool$statementsGetStatements: ToolDefinition<typeof args> = {
   description: `Fetch a Statement
 
 Get a pre-signed URL for the requested statement file.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await statementsGetStatements(

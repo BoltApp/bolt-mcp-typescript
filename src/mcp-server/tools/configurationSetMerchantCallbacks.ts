@@ -17,6 +17,13 @@ export const tool$configurationSetMerchantCallbacks: ToolDefinition<
   description: `Set Callback URLs
 
 Configure callbacks URLs for a Bolt merchant division. This will store or override only the callback URLs that are specified in the request. Operations are fully transactional.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await configurationSetMerchantCallbacks(

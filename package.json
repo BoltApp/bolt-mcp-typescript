@@ -1,9 +1,13 @@
 {
   "name": "boltcheckout",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "Speakeasy",
   "type": "module",
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoltApp/bolt-mcp-typescript.git"
+  },
   "bin": {
     "boltcheckout": "bin/mcp-server.js",
     "mcp": "bin/mcp-server.js"

@@ -15,6 +15,13 @@ export const tool$webhooksGetWebhook: ToolDefinition<typeof args> = {
   description: `Get Webhook
 
 Get Webhook information by its Webhook ID. Results only include webhooks authorized by the X-API-Key.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await webhooksGetWebhook(

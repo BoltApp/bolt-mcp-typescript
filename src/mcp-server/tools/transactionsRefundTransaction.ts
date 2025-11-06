@@ -15,6 +15,13 @@ export const tool$transactionsRefundTransaction: ToolDefinition<typeof args> = {
   description: `Refund a Transaction
 
 This refunds a captured transaction. Refunds can be done for any partial amount or for the total authorized amount. These refunds are processed synchronously and return information about the refunded transaction in the standard \`transaction_view\` object.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await transactionsRefundTransaction(

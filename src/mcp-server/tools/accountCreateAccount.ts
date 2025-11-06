@@ -15,6 +15,13 @@ export const tool$accountCreateAccount: ToolDefinition<typeof args> = {
   description: `Create Bolt Account
 
 Create a Bolt shopping account.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await accountCreateAccount(

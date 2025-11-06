@@ -17,6 +17,13 @@ export const tool$configurationGetMerchantCallbacks: ToolDefinition<
   description: `Get Callback URLs
 
 Retrieves callbacks URLs for a Bolt merchant division.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await configurationGetMerchantCallbacks(

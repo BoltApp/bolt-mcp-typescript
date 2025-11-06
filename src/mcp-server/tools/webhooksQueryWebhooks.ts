@@ -15,6 +15,13 @@ export const tool$webhooksQueryWebhooks: ToolDefinition<typeof args> = {
   description: `Query Webhooks
 
 Find webhook configurations belonging to a merchant division. Results are limited to only show webhooks authorized by the X-API-Key.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await webhooksQueryWebhooks(

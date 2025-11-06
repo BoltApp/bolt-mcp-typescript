@@ -15,6 +15,13 @@ export const tool$testingTestShipping: ToolDefinition<typeof args> = {
   description: `Test Shipping
 
 This endpoint simulates tracking an order's shipment and is for testing purposes only.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": false,
+  },
   args,
   tool: async (client, args, ctx) => {
     const [result, apiCall] = await testingTestShipping(

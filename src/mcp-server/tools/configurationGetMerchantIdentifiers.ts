@@ -10,6 +10,13 @@ export const tool$configurationGetMerchantIdentifiers: ToolDefinition = {
   description: `Get Merchant Identifiers
 
 This endpoint returns the merchant's public ID and the [publishable key](https://help.bolt.com/developers/tools/api-keys/) related to the merchant division.`,
+  annotations: {
+    "title": "",
+    "destructiveHint": false,
+    "idempotentHint": false,
+    "openWorldHint": false,
+    "readOnlyHint": true,
+  },
   tool: async (client, ctx) => {
     const [result, apiCall] = await configurationGetMerchantIdentifiers(
       client,
